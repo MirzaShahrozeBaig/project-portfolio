@@ -4,9 +4,10 @@ import pandas as pd
 import pickle
 
 # Load model & scaler
-model = pickle.load(open('churn_model.pkl', 'rb'))
-scaler = pickle.load(open('scaler.pkl', 'rb'))
+import joblib
 
+model = joblib.load('churn_model.joblib')
+scaler = joblib.load('scaler.joblib')
 # Load training column structure
 columns = pickle.load(open('df.pkl', 'rb')).columns
 
